@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#146c5a">
+  <title>Patient Feedback - UNI-HOSPITAL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="UNI-HOSPITAL FEEDBACK SYSTEM start page">
+      <span class="brand-mark" aria-hidden="true">U</span>
+      <span><strong>UNI-HOSPITAL FEEDBACK SYSTEM</strong><small>Patient feedback portal</small></span>
+    </a>
+    <div class="header-actions">
+      <a class="button button-light" href="index.html">Start page</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-layout">
+      <div class="page-intro">
+        <p class="eyebrow">PATIENT FEEDBACK</p>
+        <h1>Rate Your Clinic Experience</h1>
+      </div>
+
+      <div class="patient-grid">
+        <section class="panel surface">
+          <h2>Tell us about your visit</h2>
+          <p class="panel-intro">Share feedback anonymously or include your email if you would like us to follow up.</p>
+
+          <form id="feedback-form" class="form-stack">
+            <label class="field">Visit date
+              <input name="visitDate" type="date" required>
+            </label>
+
+            <label class="field">What would you like to give feedback about?
+              <select name="category" required>
+                <option value="">Choose a service</option>
+                <option>Nursing & Care</option>
+                <option>Reception & Check-in</option>
+                <option>Doctor Consultation</option>
+                <option>Wait Time</option>
+                <option>Facilities & Cleanliness</option>
+                <option>Billing & Insurance</option>
+                <option>Other</option>
+              </select>
+            </label>
+
+            <fieldset class="rating-field">
+              <legend>Overall rating <span>(1 = Poor, 5 = Excellent)</span></legend>
+              <div class="rating-options">
+                <label><input type="radio" name="rating" value="1" required><span>1</span></label>
+                <label><input type="radio" name="rating" value="2"><span>2</span></label>
+                <label><input type="radio" name="rating" value="3"><span>3</span></label>
+                <label><input type="radio" name="rating" value="4"><span>4</span></label>
+                <label><input type="radio" name="rating" value="5"><span>5</span></label>
+              </div>
+            </fieldset>
+
+            <label class="field">Comments
+              <textarea name="comments" rows="5" maxlength="1500" placeholder="What could we do better?"></textarea>
+            </label>
+
+            <fieldset class="identity-field">
+              <legend>How would you like to share?</legend>
+              <label><input type="radio" name="identity" value="email" checked> Include My Email</label>
+              <label><input type="radio" name="identity" value="anonymous"> Submit Anonymously</label>
+            </fieldset>
+
+            <label id="email-field" class="field">Email address
+              <input name="email" type="email" autocomplete="email" placeholder="Enter your Email ID">
+            </label>
+
+            <button class="button button-primary" type="submit">Send feedback</button>
+            <p id="feedback-message" class="message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

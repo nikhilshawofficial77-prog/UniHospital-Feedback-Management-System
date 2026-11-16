@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#146c5a">
+  <title>Employee Dashboard - UNI-HOSPITAL</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    
+    <a class="brand" href="index.html" aria-label="UNI-HOSPITAL FEEDBACK SYSTEM home">
+      <span class="brand-mark" aria-hidden="true">U</span>
+      <span><strong>UNI-HOSPITAL FEEDBACK SYSTEM</strong><small>Employee Dashboard</small></span>
+    </a>
+
+    <div class="header-actions">
+      <a class="button button-light" href="index.html">Start page</a>
+    </div>
+  
+  </header>
+
+  <main>
+    <section class="content-layout">
+      <div class="page-intro">
+        <h1>Feedback dashboard</h1>
+      </div>
+
+      <div class="summary-grid">
+        <article class="summary-card surface"><span>Total feedback</span><strong id="total-count">0</strong></article>
+        <article class="summary-card surface"><span>Average rating</span><strong id="average-rating">0.0 <small>/ 5</small></strong></article>
+        <article class="summary-card surface"><span>Needs review</span><strong id="pending-count">0</strong></article>
+        <article class="summary-card surface"><span>Resolved</span><strong id="resolved-count">0</strong></article>
+      </div>
+      
+      <section class="panel surface report-panel">
+        <div class="section-heading report-heading">
+          <div>
+            <h2>Patient feedback</h2>
+            <p class="panel-intro">Names are hidden for anonymous submissions.</p>
+          </div>
+          <label class="filter-field">Service
+            <select id="category-filter">
+              <option value="all">All services</option>
+              <option>Nursing & Care</option>
+              <option>Reception & Check-in</option>
+              <option>Doctor Consultation</option>
+              <option>Wait Time</option>
+              <option>Facilities & Cleanliness</option>
+              <option>Billing & Insurance</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Visit / submitted</th><th>Patient</th><th>Service</th><th>Rating</th><th>Comments</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="feedback-rows"></tbody>
+          </table>
+
+          <p id="dashboard-message" class="empty-message is-hidden">No Feedback Has Been Submitted Yet.</p>
+        </div>
+      </section>
+    </section>
+
+  </main>
+</body>
+</html>
